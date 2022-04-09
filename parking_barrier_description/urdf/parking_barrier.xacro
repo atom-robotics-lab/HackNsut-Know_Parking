@@ -6,9 +6,9 @@
 <xacro:include filename="$(find parking_barrier_description)/urdf/parking_barrier.gazebo" />
 <link name="base_link">
   <inertial>
-    <origin xyz="-0.0056187645592535584 -0.04116590365886497 0.47494061878933524" rpy="0 0 0"/>
-    <mass value="21.5338040215956"/>
-    <inertia ixx="2.234201" iyy="2.452824" izz="0.81716" ixy="-0.019409" iyz="0.017759" ixz="0.10187"/>
+    <origin xyz="0.08849577120552374 -0.04294425760323125 0.4483427058249352" rpy="0 0 0"/>
+    <mass value="22.844754021591662"/>
+    <inertia ixx="2.588206" iyy="6.739632" izz="4.927033" ixy="-0.042188" iyz="9e-06" ixz="1.041216"/>
   </inertial>
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0"/>
