@@ -11,10 +11,13 @@ rosnodejs.initNode('/booking_backend')
   console.log("Created ROS node")
 });
 
+rosnodejs.loadAllPackages();
+
+const parking_detector_pkg = rosnodejs.require("parking_detector")
+const parking_booking_msg = new parking_detector_pkg.msg.Booking()
+
 const booking_nh = rosnodejs.nh;
-
-const booking_pub = booking_nh.advertise('/chatter', 'std_msgs/String');
-
+const booking_pub = booking_nh.advertise('/parking_booking', 'parking_detector/Booking');
 
 app.use(express.json());
 
@@ -52,7 +55,8 @@ app.get("/booking", async (req, res) => {
   res.status(200).json({
     data: booking
   });
-  booking_pub.publish({ data: "hi" });
+  parking_booking_msg.parking_space.data = 8
+  booking_pub.publish(parking_booking_msg);
 });
 app.patch("/booking/:id", async (req, res) => {
   const booking = await Booking.findByIdAndUpdate(req.params.id, req.body, {
