@@ -6,15 +6,14 @@ require("dotenv").config()
 
 const app = express();
 
-rosnodejs.initNode('/my_node')
+rosnodejs.initNode('/booking_backend')
 .then(() => {
   console.log("Created ROS node")
 });
 
-const nh = rosnodejs.nh;
+const booking_nh = rosnodejs.nh;
 
-const pub = nh.advertise('/chatter', 'std_msgs/String');
-
+const booking_pub = booking_nh.advertise('/chatter', 'std_msgs/String');
 
 
 app.use(express.json());
@@ -53,7 +52,7 @@ app.get("/booking", async (req, res) => {
   res.status(200).json({
     data: booking
   });
-  pub.publish({ data: "hi" });
+  booking_pub.publish({ data: "hi" });
 });
 app.patch("/booking/:id", async (req, res) => {
   const booking = await Booking.findByIdAndUpdate(req.params.id, req.body, {
