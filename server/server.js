@@ -45,18 +45,20 @@ const bookingSchema = new mongoose.Schema({
 const Booking = mongoose.model("booking", bookingSchema);
 
 app.post("/booking", async (req, res) => {
-  const booking = await Booking.create(req.body);
-  res.status(201).json({
-    data: booking
-  });
+  //const booking = await Booking.create(req.body);
+  //res.status(201).json({
+  //  data: booking
+  //});
+  parking_space_id = req.body
+  console.log(req.params)
+  parking_booking_msg.parking_space.data = parking_space_id
+  booking_pub.publish(parking_booking_msg);
 });
 app.get("/booking", async (req, res) => {
   const booking = await Booking.find({}).lean().exec();
   res.status(200).json({
     data: booking
   });
-  parking_booking_msg.parking_space.data = 8
-  booking_pub.publish(parking_booking_msg);
 });
 app.patch("/booking/:id", async (req, res) => {
   const booking = await Booking.findByIdAndUpdate(req.params.id, req.body, {
