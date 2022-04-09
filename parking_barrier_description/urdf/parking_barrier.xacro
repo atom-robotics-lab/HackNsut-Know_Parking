@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<robot name="parking_barrier" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find parking_barrier_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find parking_barrier_description)/urdf/parking_barrier.trans" />
+<xacro:include filename="$(find parking_barrier_description)/urdf/parking_barrier.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.0056187645592535584 -0.04116590365886497 0.47494061878933524" rpy="0 0 0"/>
+    <mass value="21.5338040215956"/>
+    <inertia ixx="2.234201" iyy="2.452824" izz="0.81716" ixy="-0.019409" iyz="0.017759" ixz="0.10187"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://parking_barrier_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://parking_barrier_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="barrier_1">
+  <inertial>
+    <origin xyz="1.3077866189318545 0.08581754843845117 -0.00011663964943553484" rpy="0 0 0"/>
+    <mass value="62.329658342127686"/>
+    <inertia ixx="0.043257" iyy="49.255856" izz="49.228573" ixy="-0.096962" iyz="9e-06" ixz="0.002189"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.016028 -0.106468 -0.828993" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://parking_barrier_description/meshes/barrier_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.016028 -0.106468 -0.828993" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://parking_barrier_description/meshes/barrier_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rev1" type="revolute">
+  <origin xyz="-0.016028 0.106468 0.828993" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="barrier_1"/>
+  <axis xyz="-0.0 1.0 -0.0"/>
+  <limit upper="0.0" lower="-1.570796" effort="100" velocity="100"/>
+</joint>
+
+</robot>
