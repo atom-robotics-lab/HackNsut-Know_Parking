@@ -1,0 +1,7 @@
+<launch>
+
+    <node name="parking_detector" pkg="parking_detector" type="parking_detector.py" output="screen" />
+
+    <node name="rqt_image_view" pkg="rqt_image_view" type="rqt_image_view" />
+
+</launch>

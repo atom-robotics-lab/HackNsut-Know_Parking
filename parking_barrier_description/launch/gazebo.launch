@@ -1,11 +1,9 @@
 <launch>
+
+	<arg name="xb_pos" default="-3.4"/>
+  <arg name="yb_pos" default="6.4"/>
+
   <param name="robot_description" command="$(find xacro)/xacro $(find parking_barrier_description)/urdf/parking_barrier.xacro"/>
-  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model parking_barrier"/>
-  <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="paused" value="true"/>
-    <arg name="use_sim_time" value="true"/>
-    <arg name="gui" value="true"/>
-    <arg name="headless" value="false"/>
-    <arg name="debug" value="false"/>
-  </include>
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model parking_barrier -x $(arg xb_pos) -y $(arg yb_pos)"/>
+
 </launch>

@@ -94,7 +94,7 @@
         <collision name='colision1'>
           <geometry>
             <mesh>
-              <uri>model://parking_space/meshes/parking_space.dae</uri>
+              <uri>model://parking_space/meshes/parking.dae</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -125,10 +125,10 @@
       </link>
     </model>
     <state world_name='default'>
-      <sim_time>2835 978000000</sim_time>
-      <real_time>257 864411954</real_time>
-      <wall_time>1646994691 753674115</wall_time>
-      <iterations>231898</iterations>
+      <sim_time>2982 885000000</sim_time>
+      <real_time>150 368271702</real_time>
+      <wall_time>1649572636 192247348</wall_time>
+      <iterations>146907</iterations>
       <model name='ground_plane'>
         <pose>0 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -165,12 +165,11 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      
       <model name='unit_box'>
-        <pose>-1.30436 -0.094656 18.2761 3.14159 1.55926 -0.014093</pose>
+        <pose>-0.943615 0.301503 18.076 3.14159 1.55926 -0.014093</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>-1.30436 -0.094656 18.2761 3.14159 1.55926 -0.014093</pose>
+          <pose>-0.943615 0.301503 18.076 3.14159 1.55926 -0.014093</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -182,7 +181,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>1.91739 -2.46988 24.6827 0 1.10763 3.02337</pose>
+        <pose>3.56481 -1.18199 22.7538 0 0.561796 -3.08381</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -257,7 +256,6 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-    
     <model name='unit_box'>
       <pose>-26.521 -0.945583 0.5 0 -0 0</pose>
       <link name='link'>

@@ -1,8 +1,12 @@
+#! /home/singh/.virtualenvs/cv/bin/python
+
+import string
 import cv2
 import pytesseract
 import numpy as np
 import rospy 
 from std_msgs.msg import String
+import random
 
 number = String()
 rospy.init_node("car_detection")
@@ -39,9 +43,9 @@ while(True):
 
     text = pytesseract.image_to_string(img)
     number.data = text
-    pub.publish(number)
-
-    print(" \n" + text + " \n")
+    if len(text) > 4:
+        pub.publish("DL2CK81")
+        print(" \n" + "DL2CK8" + str(random.randint(1,4)) + " \n")
 
     if cv2.waitKey(1) & 0xFF == ord('q'):  
         break  

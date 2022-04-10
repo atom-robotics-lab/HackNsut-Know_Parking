@@ -13,14 +13,14 @@
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://parking_barrier_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://parking_sim/models/barrier/meshes/barrier0.dae" scale="1 1 1"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://parking_barrier_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://parking_sim/models/barrier/meshes/barrier0.dae" scale="1 1 1"/>
     </geometry>
   </collision>
 </link>
@@ -34,14 +34,14 @@
   <visual>
     <origin xyz="0.016028 -0.106468 -0.828993" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://parking_barrier_description/meshes/barrier_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://parking_sim/models/barrier/meshes/barrier1.dae" scale="1 1 1"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="0.016028 -0.106468 -0.828993" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://parking_barrier_description/meshes/barrier_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://parking_sim/models/barrier/meshes/barrier1.dae" scale="1 1 1"/>
     </geometry>
   </collision>
 </link>
@@ -53,13 +53,5 @@
   <axis xyz="-0.0 1.0 -0.0"/>
   <limit upper="0.0" lower="-1.570796" effort="100" velocity="100"/>
 </joint>
-    <transmission name="Rev1_trans" type="SimpleTransmission">
-			<type>transmission_interface/SimpleTransmission</type>
-			<actuator name="Rev1_motor">
-				<mechanicalReduction>1</mechanicalReduction>
-			</actuator>
-			<joint name="Rev1">
-				<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
-			</joint>
-		</transmission>
+
 </robot>

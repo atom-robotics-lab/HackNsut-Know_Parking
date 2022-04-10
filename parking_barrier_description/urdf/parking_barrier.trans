@@ -1,15 +1,14 @@
 <?xml version="1.0" ?>
 <robot name="parking_barrier" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
-<transmission name="Rev1_tran">
-  <type>transmission_interface/SimpleTransmission</type>
-  <joint name="Rev1">
-    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-  </joint>
-  <actuator name="Rev1_actr">
-    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    <mechanicalReduction>1</mechanicalReduction>
-  </actuator>
-</transmission>
+  <transmission name="Rev1_trans" type="SimpleTransmission">
+		<type>transmission_interface/SimpleTransmission</type>
+		<actuator name="Rev1_motor">
+			<mechanicalReduction>1</mechanicalReduction>
+		</actuator>
+		<joint name="Rev1">
+			<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+		</joint>
+	</transmission>
 
 </robot>
