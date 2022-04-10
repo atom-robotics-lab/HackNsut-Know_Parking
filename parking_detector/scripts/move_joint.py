@@ -17,7 +17,7 @@ class Robot_Controller:
     
     def Book_cb(self, data):
         self.pub2.publish(str(data.parking_space))
-        self.pub.publish(120)
+        #self.pub.publish(120)
         
 
 
