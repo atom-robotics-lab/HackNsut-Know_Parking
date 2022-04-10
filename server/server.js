@@ -44,13 +44,13 @@ const bookingSchema = new mongoose.Schema({
 });
 const Booking = mongoose.model("booking", bookingSchema);
 
-app.post("/booking", async (req, res) => {
+app.post("/booking/:id", async (req, res) => {
   //const booking = await Booking.create(req.body);
   //res.status(201).json({
   //  data: booking
   //});
-  parking_space_id = req.body
-  console.log(req.params)
+  parking_space_id = req.params.id
+  console.log(req.params.id)
   parking_booking_msg.parking_space.data = parking_space_id
   booking_pub.publish(parking_booking_msg);
 });
