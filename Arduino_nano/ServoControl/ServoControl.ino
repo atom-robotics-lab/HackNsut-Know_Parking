@@ -1,3 +1,16 @@
+/*
+ * rosserial Servo Control Example
+ *
+ * This sketch demonstrates the control of hobby R/C servos
+ * using ROS and the arduiono
+ * 
+ * For the full tutorial write up, visit
+ * www.ros.org/wiki/rosserial_arduino_demos
+ *
+ * For more information on the Arduino Servo Library
+ * Checkout :
+ * http://www.arduino.cc/en/Reference/Servo
+ */
 
 #if (ARDUINO >= 100)
  #include <Arduino.h>
@@ -18,16 +31,16 @@ ros::NodeHandle  nh;
 Servo servo;
 
 void servo_cb( const std_msgs::String& cmd_msg){
+  
   lcd.clear();
-  lcd.setCursor(2,0); 
-  lcd.print("Plate: ");
+  lcd.setCursor(0,0); 
   lcd.print("DL2CK81");
-  lcd.setCursor(2,1);
-  lcd.print("Park Spot: ");
+  lcd.setCursor(0,1);
+  lcd.print("Spot: ");
   lcd.print(cmd_msg.data);
-  servo.write(120); //set servo angle, should be from 0-180
-  delay(7000);
-  servo.write(20);
+  servo.write(20); //set servo angle, should be from 0-180
+  delay(10000);
+  servo.write(120);
    
 }
 
@@ -43,13 +56,14 @@ void setup(){
   nh.subscribe(sub);
   
   nh.initNode();
-  lcd.setCursor(2,0);
+  lcd.setCursor(0,0);
   lcd.print("Know-Parking");
-  lcd.setCursor(2,1);
+  lcd.setCursor(0,1);
   lcd.print("Show Licence Plate");
   nh.subscribe(sub);
   
   servo.attach(9); //attach it to pin 9
+  servo.write(120);
 }
 
 void loop(){
