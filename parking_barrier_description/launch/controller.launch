@@ -1,9 +1,11 @@
 <launch>
 
 <rosparam file="$(find parking_barrier_description)/launch/controller.yaml" command="load"/>
-<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="parking_barrier" args="Rev1_position_controller joint_state_controller "/>
+
+<node name="controller_spawner" pkg="controller_manager" type="spawner" output="screen" args="joint_state_controller Rev1_position_controller"/>
+
 <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
-  <remap from="/joint_states" to="/parking_barrier/joint_states"/>
+  <!-- <remap from="/joint_states" to="/parking_barrier/joint_states"/> -->
 </node>
 
 </launch>

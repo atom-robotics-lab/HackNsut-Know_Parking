@@ -53,5 +53,13 @@
   <axis xyz="-0.0 1.0 -0.0"/>
   <limit upper="0.0" lower="-1.570796" effort="100" velocity="100"/>
 </joint>
-
+    <transmission name="Rev1_trans" type="SimpleTransmission">
+			<type>transmission_interface/SimpleTransmission</type>
+			<actuator name="Rev1_motor">
+				<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+			<joint name="Rev1">
+				<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+			</joint>
+		</transmission>
 </robot>
