@@ -17,7 +17,6 @@
   padding-left: var(--dl-space-space-unitandahalfunit);
   border-radius: 1.875rem;
   padding-right: var(--dl-space-space-unitandahalfunit);
-  padding-bottom: 0px;
 }
 .primary-pink-button-button:hover {
   cursor: pointer;
@@ -65,7 +64,7 @@
   height: 42px;
   display: flex;
   align-items: center;
-  padding-left: 472px;
+  padding-left: 405px;
   flex-direction: row;
   justify-content: space-between;
 }
@@ -205,7 +204,6 @@
   padding-top: var(--dl-space-space-triplequarterunit);
   border-color: var(--dl-color-secondary-200);
   padding-left: var(--dl-space-space-unitandahalfunit);
-  border-radius: 1.875rem;
   padding-right: var(--dl-space-space-unitandahalfunit);
   padding-bottom: var(--dl-space-space-triplequarterunit);
 }
@@ -248,7 +246,7 @@
   z-index: 1;
   align-self: center;
   box-shadow: 0 8px 26px -4px hsla(0,0%,8%,.15),0 8px 9px -5px hsla(0,0%,8%,.06)!important;
-  margin-top: var(--dl-space-space-tripleunit);
+  margin-top: 170px;
   align-items: flex-start;
   border-radius: var(--dl-radius-radius-radius1);
   flex-direction: column;
@@ -303,9 +301,7 @@
   transition: all .15s ease-in;
   padding-top: var(--dl-space-space-triplequarterunit);
   border-width: 0px;
-  padding-left: var(--dl-space-space-unitandahalfunit);
   border-radius: 1.875rem;
-  padding-right: 0px;
   padding-bottom: var(--dl-space-space-triplequarterunit);
 }
 .home1-button:hover {

@@ -18,7 +18,7 @@ booking_btn.addEventListener('click', event => {
 function setParkingBooked(btn_handle, parking_space){
     btn_handle.style.backgroundColor = "salmon"
     btn_handle.style.color = "white"
-    console.log("Setting button as " + parking_space + " as booked")
+    console.log("Setting button " + booked_parking_space + " as booked")
 }
 
 let a1_btn = document.getElementById("parking_space_a1")
