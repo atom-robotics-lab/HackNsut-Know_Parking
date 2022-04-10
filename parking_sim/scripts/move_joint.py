@@ -1,8 +1,10 @@
-#! /usr/bin/env python3
+#! /usr/bin/python
+
 import rospy
 from std_msgs.msg import String
 from std_msgs.msg import UInt16
-from parking_detector import Booking
+from parking_detector.msg import Booking
+
 
 class Robot_Controller:
     #initialised values
