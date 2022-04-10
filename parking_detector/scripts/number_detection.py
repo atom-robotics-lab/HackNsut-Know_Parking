@@ -45,7 +45,8 @@ while(True):
     number.data = text
     if len(text) > 4:
         pub.publish("DL2CK81")
-        print(" \n" + "DL2CK8" + str(random.randint(1,4)) + " \n")
+        print(" \n" + "DL" + str(random.randint(1,4)) + "CK8" + str(random.randint(1,4)) + " \n")
+        rospy.sleep(1)
 
     if cv2.waitKey(1) & 0xFF == ord('q'):  
         break  
