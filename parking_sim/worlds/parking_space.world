@@ -1,3 +1,4 @@
+<?xml version ="1.0"?>
 <sdf version='1.7'>
   <world name='default'>
     <light name='sun' type='directional'>
@@ -94,7 +95,7 @@
         <collision name='colision1'>
           <geometry>
             <mesh>
-              <uri>model://parking_space/meshes/parking.dae</uri>
+              <uri>model://parking_space/meshes/parking_space.dae</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -115,7 +116,7 @@
           <cast_shadows>1</cast_shadows>
           <geometry>
             <mesh>
-              <uri>model://parking_space/meshes/parking.dae</uri>
+              <uri>model://parking_space/meshes/parking_space.dae</uri>
             </mesh>
           </geometry>
         </visual>

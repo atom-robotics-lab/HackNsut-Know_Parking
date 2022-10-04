@@ -1,2 +1,3 @@
 ./__pycache__/*
 parking_detector/scripts/__pycache__/*
+.vscode/*
